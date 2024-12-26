@@ -52,8 +52,30 @@
 
 3. Приватная подсеть.
  - Создать в VPC subnet с названием private, сетью 192.168.20.0/24.
+
+  <img width="287" alt="private addresses" src="https://github.com/user-attachments/assets/0bc6c8b6-a9d6-4a18-ae33-d0962dfc11b5" />
+
+  <img width="492" alt="private-vm" src="https://github.com/user-attachments/assets/c789774c-dbff-47e4-8701-aae41f37cb3a" />
+
+  <img width="606" alt="subnet-private-browser" src="https://github.com/user-attachments/assets/38f22bba-b535-412e-911f-074f583ed4b7" />
+ 
  - Создать route table. Добавить статический маршрут, направляющий весь исходящий трафик private сети в NAT-инстанс.
+
+  <img width="486" alt="route table" src="https://github.com/user-attachments/assets/0fb00cf7-07e7-4e75-93ae-7f464fcef6eb" />
+
+  <img width="297" alt="nat-instance-ip" src="https://github.com/user-attachments/assets/7215023e-1c39-40bf-9d70-6608535ee372" />
+
+  <img width="468" alt="nat plan" src="https://github.com/user-attachments/assets/bfb7d01b-29d3-4033-b5fd-8df546747953" />
+
+  <img width="1100" alt="next hop" src="https://github.com/user-attachments/assets/a9ca0fbb-7de7-4a8c-9523-bfd03413efd5" />
+
  - Создать в этой приватной подсети виртуалку с внутренним IP, подключиться к ней через виртуалку, созданную ранее, и убедиться, что есть доступ к интернету.
+
+  **Обязательно используем кманду ssh -J user1@jump-host user2@remote-host дл подключения через jump**
+  
+  <img width="1053" alt="private-vm-browser" src="https://github.com/user-attachments/assets/cc30792d-c26f-493e-891a-e9106167c83f" />
+
+  <img width="580" alt="ping private-vm" src="https://github.com/user-attachments/assets/55bf289b-d130-4afa-ac72-316467223f41" />
 
 Resource Terraform для Yandex Cloud:
 
